@@ -1,0 +1,3 @@
+CLOCK = (tick->CLOCK).
+RADIO = (on -> off -> RADIO).
+||CLOCK_RADIO = (CLOCK || RADIO).

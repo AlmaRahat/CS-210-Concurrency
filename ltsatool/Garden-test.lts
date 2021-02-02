@@ -1,0 +1,29 @@
+const N = 2
+const A = (2*N) 
+range T = 0..N
+range D = 0..A
+
+MEMORY      = MEMORY[0],
+MEMORY[u:T] = (read[u] -> MEMORY[u] 
+           |write[v:T] -> MEMORY[v]).
+
+TURNSTILE = (go -> write[0] -> RUN),
+RUN = (arrive -> INCREMENT),
+INCREMENT = (read[v:0..N-1] -> write[v+1] -> RUN | read[N] -> TURNSTILE).
+
+||GARDEN = (east:TURNSTILE || west:TURNSTILE || {east, west}::MEMORY)
+			/{reset/{east, west}.write[0], 
+			go/{east, west}.go, 
+			east.return/east.read[N], 
+			west.return/west.read[N]}.
+
+/*
+TEST = TEST[0],
+TEST[v:D] = ({east,west}.arrive -> TEST[v+1] | reset -> TEST[0] | when v>A wrong -> ERROR).
+||TESTGARDEN = (GARDEN || TEST).
+*/
+// new test  for write
+
+TEST = TEST[0],
+TEST[v:D] = ({east, west}.write[u:1..N] -> TEST[v+1] | reset -> TEST[0] | when v > N wrong -> ERROR).
+||TESTGARDEN = (GARDEN || TEST).

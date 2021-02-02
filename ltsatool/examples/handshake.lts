@@ -1,0 +1,3 @@
+Process = (extend -> shake -> retract -> Process).
+Process2 = (extend2 -> shake -> retract2 -> Process2).
+||HANDSHAKE = (Process||Process2).
