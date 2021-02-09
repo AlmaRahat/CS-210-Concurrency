@@ -1,0 +1,1 @@
+Buffer(N=3) = (store[i:1..N] -> read[i] -> Buffer).

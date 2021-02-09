@@ -1,0 +1,6 @@
+const N = 3
+range T = 0..N
+Countdown = (start -> Countdown[N]),
+Countdown[i:T] = (when i>0 tick -> Countdown[i-1]
+					 | when i==0 beep -> STOP
+					 | stop -> STOP).

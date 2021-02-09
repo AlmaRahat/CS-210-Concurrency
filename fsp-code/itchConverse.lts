@@ -1,0 +1,3 @@
+Itch = (scratch -> STOP).
+Converse = (think -> talk -> listen -> Converse | stop -> STOP).
+||ItchConverse = (Itch || Converse).

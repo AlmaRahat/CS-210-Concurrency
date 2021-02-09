@@ -1,0 +1,5 @@
+TrafficLight = Red,
+Red = (toOrangeGreen -> OrangeGreen),
+OrangeGreen = (toGreen -> Green),
+Green = (toOrangeRed -> OrangeRed),
+OrangeRed = (toRed -> Red). 

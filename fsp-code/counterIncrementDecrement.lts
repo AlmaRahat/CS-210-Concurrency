@@ -1,0 +1,3 @@
+Counter(N=3) = Counter[0],
+Counter[i:0..N] = (when (i < N) increment -> Counter[i+1]
+					| when (i > 0) decrement -> Counter[i-1]).

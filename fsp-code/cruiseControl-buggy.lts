@@ -1,0 +1,3 @@
+CruiseControl = Off,
+Off = (engineOn -> CheckSpeed),
+CheckSpeed = (engineOff -> Off | speed -> CheckSpeed).

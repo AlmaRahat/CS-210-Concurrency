@@ -1,0 +1,14 @@
+Thread = New,
+New = (start -> Runnable),
+Runnable = (waitOnLock -> Blocked
+			| sleep -> TimedWaiting
+			| wait -> TimedWaiting
+			| waitOnOthers -> Wait
+			| run -> Runnable
+			| exit -> Terminated),
+Blocked = (lockAcquired -> Runnable),
+TimedWaiting = (timeElapsed -> Runnable
+				| timeElapsed -> Blocked),
+Wait = (notify -> Runnable	
+		| notify -> Blocked),
+Terminated = STOP.

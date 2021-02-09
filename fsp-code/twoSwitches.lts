@@ -1,0 +1,2 @@
+Switch = (on -> off -> Switch).
+||TwoSwitches = (a:Switch || b:Switch).

@@ -1,0 +1,7 @@
+Switch = (down -> up -> Switch).
+/*
+// another version
+Switch = Off,
+Off = (down -> On),
+On = (up -> Off).
+*/
