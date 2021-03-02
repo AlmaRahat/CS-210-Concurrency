@@ -25,18 +25,18 @@ public class SemaController extends Controller{
             wait();
         }
         */
-        if (spacesLeft < capacity)
-            ++spacesLeft;
+        if (spacesLeft > 0)
+            --spacesLeft;
         semaphore.release();
     }
 
     @Override
     public synchronized void leave()
         throws InterruptedException {
-        while (spacesLeft == 0){
+        while (spacesLeft < capacity){
             wait();
         }
-        --spacesLeft;
+        ++spacesLeft;
         notifyAll();
     }
 
