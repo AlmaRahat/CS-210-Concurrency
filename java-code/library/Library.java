@@ -14,8 +14,8 @@ public class Library{
     private boolean[] booksInUse = new boolean[MAX_AVAIALABLE];
     public synchronized void borrowBook(String name)
             throws InterruptedException{
+        System.out.println(name + " is waiting!");
         while(areAllTrue()){
-            System.out.println(name + " is waiting!");        
             wait();
         }
         System.out.println(name + " is trying to get a book!");
@@ -33,7 +33,7 @@ public class Library{
                 break;
             }
     }
-    public synchronized void returnBook(String name) 
+    public synchronized void returnBook(String name)
             throws InterruptedException{
         System.out.println(name + " is trying to return a book!");
         returnFirstAvailableSlot();

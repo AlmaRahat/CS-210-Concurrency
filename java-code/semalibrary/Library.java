@@ -17,6 +17,7 @@ public class Library{
     private boolean[] booksInUse = new boolean[MAX_AVAIALABLE];
     private Semaphore semaphore = new Semaphore(MAX_AVAIALABLE);
     public void borrowBook(String name) throws InterruptedException{
+        System.out.println(name + " is waiting!");
         semaphore.acquire();
         System.out.println(name + " is trying to get a book!");
         takeFirstAvaialbleBook();
