@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.util.concurrent.*; 
+import java.util.concurrent.*;
 /**
  *
  * @author aamr201
