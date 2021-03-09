@@ -1,0 +1,8 @@
+Fork = (pick -> release -> Fork).
+Philosopher = (sit -> right.pick -> left.pick -> eat -> 
+				right.release -> left.release -> stand -> Philosopher).
+||ThreePhil = ({a, b, c}:Philosopher). // {object_1, object_2}:class = {name_1, name_2 : Process}
+||Fork_ab = ({a.right, b.left}::Fork). // {object-1, object_2}:paramter = {name_1, name_2}::shared resources
+||Fork_bc = ({b.right, c.left}::Fork). 
+||Fork_ca = ({c.right, a.left}::Fork).
+||Table = (ThreePhil || Fork_ab || Fork_bc || Fork_ca).
