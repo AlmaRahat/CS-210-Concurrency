@@ -1,0 +1,16 @@
+Machine = (on -> ClosedDoor[0]),
+ClosedDoor[i:0..1] = (when i==0 open -> Empty |
+						when i==1 open -> Full |
+						when i==0 off -> Machine),
+Full = (unload -> Empty | 
+			close -> ClosedDoor[1] | 
+			start -> Cycle[0]),
+Empty = (load -> Full | close -> ClosedDoor[0]),
+Cycle[i:0..2] = (when i==0 wash -> Cycle[i+1] |
+					when i==1 rinse -> Cycle[i+1] |
+					when i==2 dry -> ClosedDoor[1]| 
+					pause[i] -> Paused[i]),
+Paused[i:0..2] = (resume[i] -> Cycle[i]).
+
+property CycleProperty = (wash -> rinse -> dry 
+							-> CycleProperty).
