@@ -1,0 +1,9 @@
+// bounded buffer
+Producer = (put -> Producer).
+Consumer = (get -> Consumer).
+Buffer(Size=5) = Count[0],
+Count[count:0..Size] = 
+(when (count < Size) put -> Count[count+1]
+| when (count > 0) get -> Count[count-1]).
+
+||BoundedBuffer = (Producer || Buffer || Consumer).

@@ -1,0 +1,15 @@
+DRINKS = READY,
+READY = (in.coin[5] -> CREDIT[5]
+		|in.coin[10] -> CREDIT[10]
+		|in.coin[20] -> CHANGE[5]),
+CREDIT[5] = (in.coin[5] -> CREDIT[10]
+			|in.coin[10] ->  CHANGE[0]
+			|in.coin[20] -> CHANGE[10]),
+CREDIT[10] = (in.coin[5] -> CHANGE[0]
+			|in.coin[10] ->  CHANGE[5]
+			|in.coin[20] -> CHANGE[15]),
+CHANGE[0] = (dispense -> READY),
+CHANGE[5] = (out.coin[5] -> CHANGE[0]),
+CHANGE[10] = (out.coin[10] -> CHANGE[0]),
+CHANGE[15] = (out.coin[5] -> CHANGE[10]
+			|out.coin[10] -> CHANGE[5]).

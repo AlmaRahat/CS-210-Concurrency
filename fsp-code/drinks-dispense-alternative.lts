@@ -1,0 +1,9 @@
+const N=3
+range T = 0..N
+Coins = Coins[0], 
+Coins[i:T] = (when i==0 five -> Coins[i+1] | when i==0 ten -> Coins[i+2]|
+when i==0 twenty -> change[5] -> Cola | when i==1 five -> Coins[i+1] |
+when i==1 ten -> Cola | when i==1 twenty -> change[10] -> Cola |
+when i==2 five -> Cola | when i==2 ten -> change[5] -> Cola | when i==2 twenty -> change[15] -> Cola),
+Cola = (givesCola -> Coins[0]).
+
