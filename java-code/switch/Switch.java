@@ -44,9 +44,10 @@ public class Switch implements Runnable
       // if interrupted exit the thread appropriately
       catch(InterruptedException e){
         System.out.println("Interrupt occured!");
-      	break;
+      	// break;
       }
     }
 
   }
+
 }

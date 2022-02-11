@@ -1,5 +1,3 @@
-//package ornamentalgarden;
-
 public class Garden {
     public static final int MAX = 100;
     private Counter counter;

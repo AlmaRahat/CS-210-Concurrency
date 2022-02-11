@@ -1,5 +1,3 @@
-//package ornamentalgarden;
-
 public class Counter {
     int value;
 
