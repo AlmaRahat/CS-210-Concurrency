@@ -1,6 +1,3 @@
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Turnstile implements Runnable{
     private Counter people;
 
