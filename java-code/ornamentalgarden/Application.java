@@ -10,6 +10,19 @@ public class Application {
         while(true){
             try {
                 garden.go(); // run the garden
+                /*
+                // reset counters
+                reset();
+                // create threads
+                Thread westThread = new Thread(west, "west");
+                Thread eastThread = new Thread(east, "east");
+                // start threads
+                westThread.start();
+                eastThread.start();
+                // wait for threads to die
+                westThread.join();
+                eastThread.join();
+                */
             } catch (InterruptedException ex) {
             }
             // count at the end

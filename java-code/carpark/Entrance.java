@@ -1,13 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author aamr201
- */
 public class Entrance implements Runnable{
     Controller controller;
     private int sleepScaler = 1000;
